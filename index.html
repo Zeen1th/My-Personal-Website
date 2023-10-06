@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Personal Portfolio</title>
+  <style>
+    /* CSS styles go here */
+    body {
+      background-color: #1a1a1a;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background-color: #000000;
+      padding: 25px;
+      text-align: center;
+      border-radius: 5px;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #ffffff;
+      margin: 0;
+    }
+    
+    .content {
+      margin: 250px auto 40px;
+      padding: 80px;
+      background-color: #262626;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 1200px;
+      position: relative;
+    }
+    
+    .content p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      position: absolute;
+      top: -75px;
+      right: -75px;
+      border: 5px solid #262626;
+    }
+    
+    .button-container {
+      margin-top: 20px;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 10px;
+      background-color: #262626;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: background-color 0.3s, transform 0.3s;
+      margin-right: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+    
+    .button img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    
+    .button:hover {
+      background-color: #333333;
+      transform: scale(1.05);
+    }
+    
+    .contact-header {
+      background-color: #000000;
+      padding: 15px;
+      text-align: right;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      display: none;
+      font-size: 20px;
+    }
+    
+    .contact-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #262626;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.3s, transform 0.3s;
+      margin-right: -1000px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    
+    .contact-button:hover {
+      background-color: #333333;
+      transform: scale(1.05);
+    }
+    
+    .contact-button-text {
+      display: inline-block;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    
+
+    
+    .button.home {
+      background-color: #262626;
+      border-radius: 10px;
+      padding: 0px 20px;
+      font-size: 16px;
+      width: fixed;
+      height: fixed;
+      line-height: fixed;
+    }
+    
+    .button.home:hover::after {
+      opacity: 1;
+    }
+    
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .fade-in {
+      animation: fade-in 1s ease-in-out;
+    }
+
+    .button-name {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 5px 10px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .button-container .button:hover .button-name {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Personal Website</h1>
+    <a href="#" class="button home">Home</a>
+    <a href="#contact" class="contact-button">Contact</a>
+  </header>
+  
+  <div class="content">
+    <img src="https://i.pinimg.com/564x/1d/02/06/1d02068fc949286033e2fd9a7e73b41f.jpg" alt="Profile Image" class="profile-image">
+    <h2>About Me</h2>
+    <p>Hello! I'm Basil, a web developer with a passion for creating modern and engaging websites. I have experience in C#, HTML, and CSS. I love developing games and fun stuff.</p>
+    
+    <div class="button-container">
+      <a href="https://steamcommunity.com/id/RzSaq/" class="button">
+        <img src="https://static-00.iconduck.com/assets.00/steam-icon-512x512-ikdnzrl9.png" alt="Steam">
+        <span class="button-name">Steam</span>
+      </a>
+      <a href="https://rzsaq.itch.io/" class="button">
+        <img src="https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/8b33ab221257b074d1d967042ad1d9d0.png" alt="itch.io">
+        <span class="button-name">itch.io</span>
+      </a>
+      <a href="https://github.com/HakuRDev" class="button">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+        <span class="button-name">GitHub</span>
+      </a>
+      <a href="https://twitter.com/RzGuts" class="button">
+        <img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-twitter-social-media-round-icon-png-image_6315985.png" alt="Twitter">
+        <span class="button-name">Twitter</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="contact-header fade-in" id="contact">
+    <a href="#" class="contact-button-text">Contact</a>
+  </div>
+  
+  <script>
+    const contactButton = document.querySelector('.contact-button');
+    const contactHeader = document.querySelector('.contact-header');
+    const homeButton = document.querySelector('.button.home');
+
+    contactButton.addEventListener('click', () => {
+      contactHeader.style.display = 'block';
+    });
+
+    homeButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        contactHeader.style.display = 'block';
+      } else {
+        contactHeader.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
