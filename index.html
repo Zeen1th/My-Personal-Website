@@ -734,7 +734,7 @@
                             <img src="https://i.pinimg.com/1200x/ed/54/51/ed5451961869a97b434b185f2fe064cc.jpg" alt="Twitter" class="social-icon">
                             <span class="social-name">Twitter</span>
                         </a>
-                        <a href="#" class="social-link" id="cv-link">
+                        <a href="https://github.com/Zeen1th/My-Personal-Website/raw/main/CV.pdf" class="social-link" target="_blank" id="cv-link">
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="social-icon">
                                 <path d="M8 11H16M8 15H16M8 7H16M4 3H16C17.1046 3 18 3.89543 18 5V19C18 20.1046 17.1046 21 16 21H4C2.89543 21 2 20.1046 2 19V5C2 3.89543 2.89543 3 4 3Z" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
@@ -914,14 +914,6 @@
         </div>
     </div>
 
-    <!-- CV Modal -->
-    <div class="contact-modal" id="cv-modal" style="z-index:2100;">
-        <div class="contact-content" style="max-width:800px;width:95%;padding:0;">
-            <button class="close-btn" id="close-cv-modal">&times;</button>
-            <iframe src="https://github.com/Zeen1th/My-Personal-Website/raw/main/CV.pdf" style="width:100%;height:80vh;border:none;border-radius:20px 20px 0 0;"></iframe>
-        </div>
-    </div>
-
     <script>
         // Page navigation
         const navLinks = document.querySelectorAll('.nav-link');
@@ -1067,29 +1059,6 @@
                 setTimeout(() => {
                     phoneCopy.textContent = '+966 559751630';
                 }, 2000);
-            }
-        });
-
-        // CV Modal functionality
-        const cvLink = document.getElementById('cv-link');
-        const cvModal = document.getElementById('cv-modal');
-        const closeCvModal = document.getElementById('close-cv-modal');
-
-        cvLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            cvModal.classList.add('active');
-        });
-        closeCvModal.addEventListener('click', function() {
-            cvModal.classList.remove('active');
-        });
-        cvModal.addEventListener('click', function(e) {
-            if (e.target === cvModal) {
-                cvModal.classList.remove('active');
-            }
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && cvModal.classList.contains('active')) {
-                cvModal.classList.remove('active');
             }
         });
 
