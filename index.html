@@ -237,17 +237,18 @@ html[data-palette="slate"] .term-prompt{color:#5eead4;}
 @media(max-width:880px){.skill-cols{grid-template-columns:repeat(2,1fr);}}
 
 /* ====================== CERTIFICATES (beside education) ====================== */
-.edu-certs{display:flex;flex-direction:column;gap:0.8rem;}
+.edu-certs{display:flex;flex-direction:column;gap:1rem;}
 .edu-certs-label{font-family:var(--font-mono);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.1rem;}
-.cert-card{display:flex;gap:0.85rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0.85rem;box-shadow:var(--shadow);transition:transform var(--spring),box-shadow var(--transition),border-color var(--transition);}
+.cert-card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:transform var(--spring),box-shadow var(--transition),border-color var(--transition);}
 .cert-card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:var(--shadow-lift);}
-/* image slot — replace the inner SVG with: <img src="certs/your-cert.jpg" alt="..."> */
-.cert-thumb{position:relative;width:70px;height:70px;flex-shrink:0;border-radius:8px;border:1px dashed var(--line);background:var(--surface-2);display:flex;align-items:center;justify-content:center;color:var(--accent);overflow:hidden;}
-.cert-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-.cert-info{min-width:0;}
+/* full certificate image showcased inside the card (replace .cert-ph with <img> to add one) */
+.cert-media{display:block;position:relative;aspect-ratio:630/487;background:#fff;border-bottom:1px solid var(--line);overflow:hidden;}
+.cert-media img{width:100%;height:100%;object-fit:contain;display:block;}
+.cert-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--accent);background:var(--surface-2);}
+.cert-info{padding:0.85rem 1rem 1rem;}
 .cert-issuer{font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);}
-.cert-title{font-family:var(--font-head);font-weight:600;font-size:0.95rem;color:var(--heading);margin:0.12rem 0 0.25rem;line-height:1.2;}
-.cert-link{font-family:var(--font-mono);font-size:0.7rem;color:var(--accent);text-decoration:none;}
+.cert-title{font-family:var(--font-head);font-weight:600;font-size:1rem;color:var(--heading);margin:0.12rem 0 0.4rem;line-height:1.2;}
+.cert-link{font-family:var(--font-mono);font-size:0.72rem;color:var(--accent);text-decoration:none;}
 .cert-link:hover{text-decoration:underline;}
 @media(min-width:641px){
     .tl-item.edu{grid-template-columns:132px minmax(0,1.05fr) minmax(0,0.95fr);}
@@ -428,20 +429,19 @@ html[data-palette="slate"] .term-prompt{color:#5eead4;}
                 <div class="edu-certs">
                     <div class="edu-certs-label">✦ Certifications</div>
                     <div class="cert-card">
-                        <div class="cert-thumb">
-                            <img src="certs/ine-data-science.jpg" alt="INE Jr. Data Science Certificate" onerror="this.remove()">
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7 22l5-3 5 3-2-7.5"/></svg>
-                        </div>
+                        <a class="cert-media" href="certs/ine-data-science.jpg" target="_blank" rel="noopener">
+                            <img src="certs/ine-data-science.jpg" alt="INE Jr. Data Science Certificate awarded to Basil Alrashedi">
+                        </a>
                         <div class="cert-info">
                             <div class="cert-issuer">INE · MCIT Path · 2024</div>
                             <div class="cert-title">Junior Data Science Associate</div>
-                            <a class="cert-link" href="certs/ine-data-science.jpg" target="_blank" rel="noopener">View certificate →</a>
+                            <a class="cert-link" href="certs/ine-data-science.jpg" target="_blank" rel="noopener">View full certificate →</a>
                         </div>
                     </div>
                     <div class="cert-card">
-                        <div class="cert-thumb">
-                            <!-- Replace with: <img src="certs/ibm-ai-analyst.jpg" alt="IBM Artificial Intelligence Analyst"> -->
-                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7 22l5-3 5 3-2-7.5"/></svg>
+                        <div class="cert-media">
+                            <!-- Add IBM cert: replace this .cert-ph with <img src="certs/ibm-ai-analyst.jpg" alt="IBM Artificial Intelligence Analyst"> -->
+                            <div class="cert-ph"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7 22l5-3 5 3-2-7.5"/></svg></div>
                         </div>
                         <div class="cert-info">
                             <div class="cert-issuer">IBM</div>
